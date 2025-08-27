@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abeille Assurances — Bee-bot</title>
+    <meta name="description" content="Bee-bot — posez vos questions en toute sécurité. Connecté à Ollama (Gemma 2B)." />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- Favicon = même logo -->
+    <link rel="icon" href="https://play-lh.googleusercontent.com/oSgJF4eIIWI8P6OMGQuBz6olsZKTOQZM_lXxmILsmVabtbucEMWHJ7VEQbHD29c0kds">
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <!-- LOGO #1 : header -->
+          <img
+            src="https://play-lh.googleusercontent.com/oSgJF4eIIWI8P6OMGQuBz6olsZKTOQZM_lXxmILsmVabtbucEMWHJ7VEQbHD29c0kds"
+            alt="Logo Abeille Assurances"
+            class="logo-img"
+            width="40"
+            height="40"
+          />
+          <div class="brand-text">
+            <span class="brand-name">Abeille Assurances</span>
+            <span class="brand-bot" aria-label="Bee-bot">Bee-bot</span>
+          </div>
+        </div>
+
+        <nav class="top-actions">
+          <a class="link" href="#" aria-label="Politiques de confidentialité">Confidentialité</a>
+          <a class="button small ghost" href="#" aria-label="Aide et support">Aide</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <!-- LOGO #2 : badge Bee-bot dans le hero -->
+        <div class="bee-badge" role="img" aria-label="Bee-bot">
+          <img
+            src="https://play-lh.googleusercontent.com/oSgJF4eIIWI8P6OMGQuBz6olsZKTOQZM_lXxmILsmVabtbucEMWHJ7VEQbHD29c0kds"
+            alt=""
+            class="bee-icon"
+            width="22"
+            height="22"
+            decoding="async"
+          />
+          <span>Bee-bot</span>
+        </div>
+
+        <h1 class="hero-title">Posez vos questions en toute sécurité</h1>
+        <p class="hero-subtitle">
+          <strong>Bee-bot</strong> vous accompagne sur vos sujets métier, RH, IT et conformité — 24/7.
+          Les échanges restent internes à l’entreprise.*
+        </p>
+
+        <!-- Barre de question -->
+        <form id="search-form" class="ask-form" autocomplete="off" aria-label="Formulaire de question">
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">🔒</span>
+            <input
+              id="question-input"
+              class="input"
+              type="text"
+              placeholder="Ex. : Comment déclarer un incident IT ?"
+              aria-label="Votre question"
+              required
+            />
+          </div>
+
+          <!-- (optionnel) sélecteur de modèle -->
+          <select id="model-select" class="select">
+            <option value="gemma:2b" selected>Gemma 2B (léger)</option>
+            <option value="llama3:8b-instruct-q4_K_M">Llama3 8B Q4 (moyen)</option>
+            <option value="mistral">Mistral (plus lourd)</option>
+          </select>
+
+          <button type="submit" class="button primary">Poser la question</button>
+        </form>
+
+        <p class="microcopy">*La sécurité effective dépend de votre déploiement (réseau interne, auth, TLS, logs).</p>
+      </div>
+
+      <div class="honeycomb" aria-hidden="true"></div>
+    </section>
+
+    <!-- Conversation -->
+    <main class="container content">
+      <div id="messages" class="messages" aria-live="polite" aria-busy="false"></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="badges">
+          <span class="badge">Interne</span>
+          <span class="badge">Ollama:11434</span>
+          <span class="badge">Sécurisé</span>
+        </div>
+        <small>© Abeille Assurances — Bee-bot. Démo connectée à Ollama (Gemma 2B).</small>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
